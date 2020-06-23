@@ -1,0 +1,28 @@
+# Project: 第三題
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = 第三題.o
+LINKOBJ  = 第三題.o
+LIBS     = -L"D:/dev-c++/DevCppPortable/MinGW64/lib" -L"D:/dev-c++/DevCppPortable/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"D:/dev-c++/DevCppPortable/MinGW64/include" -I"D:/dev-c++/DevCppPortable/MinGW64/x86_64-w64-mingw32/include" -I"D:/dev-c++/DevCppPortable/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/dev-c++/DevCppPortable/MinGW64/include" -I"D:/dev-c++/DevCppPortable/MinGW64/x86_64-w64-mingw32/include" -I"D:/dev-c++/DevCppPortable/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/dev-c++/DevCppPortable/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = 第三題.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+第三題.o: 第三題.c
+	$(CC) -c 第三題.c -o 第三題.o $(CFLAGS)
